@@ -1,0 +1,6 @@
+:root {
+    --icon-size: 20px;
+}
+.right-arrow-icon {
+    width: var(--icon-size);
+}
