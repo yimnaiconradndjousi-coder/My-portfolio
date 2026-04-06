@@ -1,6 +1,28 @@
 :root {
-    --icon-size: 20px;
+    --icon-size: 35px;
+    --btn-icon-size: 20px;
 }
 .right-arrow-icon {
+    width: var(--btn-icon-size);
+}
+
+.icon {
     width: var(--icon-size);
+}
+
+.takemeup-btn {
+    width: 45px;
+    position: fixed;
+    bottom: 50px;
+    right: 65px;
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: var(--shadow);
+    border-radius: 50%;
+    z-index: 200;
+    border: 2px solid black;
+    animation-name: bouncing;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
 }
