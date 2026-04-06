@@ -304,7 +304,7 @@ hr {
 #projects-section {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    /* height: 100vh; */
     text-align: center;
     padding: 20px;
     padding-left: 10px;
@@ -317,7 +317,7 @@ hr {
     font-size: 2rem;
     text-align: center;
     margin-top: 0.6em;
-    margin-bottom: 5%;
+    margin-bottom: 1.2em;
 }
 
 .projects-container {
@@ -336,8 +336,9 @@ hr {
     flex-direction: column;
     background-color: #f1f3f9;
     margin: 10px;
-    justify-content:end;
-    justify-content: center;
+    height: 35em;
+    /* justify-content:end; */
+    /* justify-content: center; */
     padding: 15px;
     border-radius: 10px;
     box-shadow: var(--shadow);
