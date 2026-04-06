@@ -32,8 +32,13 @@ body {
 }
 
 hr {
-    background-color: rgba(54, 54, 54, 0.644);
-    height: 2px;
+    background-color: rgba(0, 0, 0, 0.863);
+    height: 2.5px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin: 0;
 }
 
 #hero-section {
@@ -237,7 +242,7 @@ hr {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    padding-top: 80px;
+    padding-top: 55px;
     width: 100%;
     height: 100vh;
     background-image: url(/image/white\ bg2.jpg);
@@ -259,7 +264,7 @@ hr {
     width: 85%;
     padding: 20px;
     margin-top: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 
 .techstack-container {
@@ -309,15 +314,26 @@ hr {
     padding: 20px;
     padding-left: 10px;
     box-sizing: border-box;
-    background-color: #e1e4ea;
+    /* background-color: #e1e4ea; */
+    background-image: url(/image/white\ bg.jpg);
+}
 
+.project-section-title {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 4px 25px 4px;
 }
 
 #projects-section h2{
     font-size: 2rem;
     text-align: center;
-    margin-top: 0.6em;
-    margin-bottom: 1.2em;
+}
+
+#projects-section p{
+    font-size: 1rem;
+    margin-top: 5px;
+    /* margin-top: 1rem;
+    margin-bottom: 1.8rem; */
 }
 
 .projects-container {
@@ -335,10 +351,11 @@ hr {
     max-width: 360px;
     flex-direction: column;
     background-color: #f1f3f9;
+    /* background-color: rgba(255, 255, 255, 0.716); */
+    /* border: 0.5px solid black; */
+    backdrop-filter: blur(12px);
     margin: 10px;
     height: 35em;
-    /* justify-content:end; */
-    /* justify-content: center; */
     padding: 15px;
     border-radius: 10px;
     box-shadow: var(--shadow);
@@ -352,10 +369,11 @@ hr {
 }
 
 .tech-used {
-    background-color: #D7DBE4;
-    padding: 3px 12px 3px 12px;
+    background-color: var(--primary-color);
+    padding: 4px 12px 4px 12px;
     border-radius: 20px;
-    border: 1px solid black;
+    color: var(--seconday-color);
+    /* border: 1px solid black; */
     margin: 4px;
     margin-left: 0px;
     margin-top: 2px;
@@ -364,9 +382,45 @@ hr {
 
 .project-description {
     display: flex;
-    flex-direction: column;
-    justify-items: center;
-    justify-content: center;
+    flex-direction: column; 
     gap: 7px;
     justify-content: space-between;
+}
+
+/* #Service Section */
+
+#services-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    padding: 25px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.service-section-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 75px;
+}
+
+.service-section-title h2{
+    margin: 10px;
+}
+
+.services-card-container {
+    display: grid;
+    width: 85%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    row-gap: 100px;
+    column-gap: 100px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
