@@ -11,6 +11,8 @@
     --btn-shadow: 0 0 10px rgba(86, 86, 86, 0.681);
     --shadow: 0 0 10px rgba(86, 86, 86, 0.104);
     --bg-tech: #D7DBE4;
+    --icon-size: 35px;
+    --btn-icon-size: 20px;
 
 }
 
@@ -33,12 +35,30 @@ body {
 
 hr {
     background-color: rgba(0, 0, 0, 0.863);
-    height: 2.5px;
+    height: 2px;
 }
 
 h3 {
     font-size: 1.2rem;
     margin: 0;
+}
+
+.icon {
+    width: var(--icon-size);
+}
+
+.takemeup-btn {
+    width: 45px;
+    position: fixed;
+    bottom: 50px;
+    right: 65px;
+    cursor: pointer;
+    background-color: rgba(245, 245, 245, 0.762);
+    backdrop-filter: blur(15px);
+    box-shadow: var(--shadow);
+    border-radius: 50%;
+    z-index: 200;
+    border: 2px solid black;
 }
 
 #hero-section {
@@ -168,6 +188,10 @@ h3 {
     box-shadow: var(--btn-shadow);
     cursor: pointer;
     transition: all 0.2s ease;
+}
+
+.right-arrow-icon {
+    width: var(--btn-icon-size);
 }
 
 .btn-primary {
@@ -350,7 +374,7 @@ h3 {
     display: flex;
     max-width: 360px;
     flex-direction: column;
-    background-color: #f1f3f9;
+    background-color: #ffffff;
     /* background-color: rgba(255, 255, 255, 0.716); */
     /* border: 0.5px solid black; */
     backdrop-filter: blur(12px);
@@ -380,6 +404,12 @@ h3 {
     margin-bottom: 2px;
 }
 
+.project-img {
+    width: 325px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
 .project-description {
     display: flex;
     flex-direction: column; 
@@ -397,30 +427,54 @@ h3 {
     padding: 25px;
     box-sizing: border-box;
     align-items: center;
+    background-color: #f1f3f9;
 }
 
 .service-section-title {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
-    margin-bottom: 75px;
+    margin-top: 15px;
+    margin-bottom: 45px;
 }
 
 .service-section-title h2{
-    margin: 10px;
+    margin: 15px;
+}
+
+.service-section-title p{
+    width: 750px;
+    text-align: center;
 }
 
 .services-card-container {
     display: grid;
-    width: 85%;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    row-gap: 100px;
-    column-gap: 100px;
+    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    row-gap: 50px;
+    column-gap: 50px;
 }
 
 .service-card {
     display: flex;
     flex-direction: column;
     width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 0;
+    border: 2px solid rgba(0, 0, 0, 0.553);
 }
+
+.service-card h3 {
+    margin: 15px;
+    margin-left: 0;
+    font-size: 1.4rem;
+}
+
+.service-card p {
+    margin: 15px;
+    margin-left: 0;
+    font-size: 1rem;
+}
+
