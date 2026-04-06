@@ -16,13 +16,10 @@
     bottom: 50px;
     right: 65px;
     cursor: pointer;
-    background-color: #ffffff;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
     box-shadow: var(--shadow);
     border-radius: 50%;
     z-index: 200;
     border: 2px solid black;
-    animation-name: bouncing;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-
 }
