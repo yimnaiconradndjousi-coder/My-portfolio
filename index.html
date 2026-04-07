@@ -297,19 +297,23 @@
 
         <div class="contact-form">
             <form action="">
-                <label for="username">FULL NAME</label>
-                <input type="text" name="username" id="user-name" placeholder="e.g John Doe" required>
-                <hr class="seperator">
+                    <div class="input-fields">
+                    <label for="username">FULL NAME</label>
+                    <input type="text" name="username" id="user-name" placeholder="e.g John Doe" required>
+                    <hr class="seperator">
 
-                <label for="email">EMAIL ADDRESS</label>
-                <input type="email" name="email" id="email" placeholder="johndoe@gmail.com" required>
-                <hr class="seperator">
+                    <label for="email">EMAIL ADDRESS</label>
+                    <input type="email" name="email" id="email" placeholder="johndoe@gmail.com" required>
+                    <hr class="seperator">
 
-                <label for="message">MESSAGE</label>
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Type your message here..."></textarea>
-                <hr class="seperator">
-                
-                <button type="submit" class="btn-primary">SEND MESSAGE</button>
+                    <label for="message">MESSAGE</label>
+                    <textarea name="message" id="message" placeholder="Type your message here..."></textarea>
+                    <hr class="seperator">
+                </div>
+
+                <div class="form-btn">
+                    <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                </div>
             </form>
         </div>
     </section>
