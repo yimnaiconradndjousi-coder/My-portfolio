@@ -21,7 +21,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
 }
 
 body {
@@ -376,7 +376,7 @@ h3 {
     max-width: 360px;
     flex-direction: column;
     /* background-color: transparent; */
-    background-color: rgba(255, 255, 255, 0.423);
+    background-color: rgba(255, 255, 255, 0.938);
     border: 0.5px solid black;
     backdrop-filter: blur(12px);
     margin: 10px;
@@ -497,6 +497,7 @@ h3 {
     padding: 20px;
     justify-content: center;
     align-items: center;
+    background-color: #f1f3f9;
 }
 
 #about-section h2{
@@ -512,6 +513,9 @@ h3 {
     /* outline: 2px solid black; */
     border: 2px solid black;
     padding: 90px;
+    background-color: #ffffff;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
 }
 
 .my-bio p{
@@ -525,4 +529,92 @@ h3 {
     margin: 15px;
     margin-top: 0;
     border-radius: 10px;
+}
+
+/* #Contact Section */
+
+#contact-section {
+    display: flex;
+    padding: 10px;
+    padding-top: 70px;
+    padding-bottom: 110px;
+    justify-content: space-around;
+    background-color: #F9F9F9;
+}
+
+.Contact-info {
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+}
+
+.contact-title {
+    font-size: 0.9rem;
+    margin: 8px;
+    margin-left: 0;
+}
+
+.Contact-info h2{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.timeless {
+    font-weight: 500;
+    font-style: italic;
+}
+
+.info-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.info-contact {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background-color: #F3F3F3;
+}
+
+.seperator {
+    
+}
+
+label {
+    margin: 12px;
+}
+
+::placeholder {
+    color: rgb(102, 102, 102);
+}
+
+input[type="text"], input[type="email"] {
+    background-color: transparent;
+    border: none;
+    text-align: left;
+}
+
+textarea {
+    background-color: transparent;
+    border: none;
+    resize: none;
+}
+
+.btn-primary {
+    font-size: 1rem;
+    padding: 14px 20px 14px 20px;
+    background-color: rgb(23, 23, 23);
+    border: none;
+    color: var(--seconday-color);
+    border-radius: 3px;
+    box-shadow: var(--btn-shadow);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
 }
