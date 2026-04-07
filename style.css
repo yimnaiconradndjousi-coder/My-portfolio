@@ -464,7 +464,7 @@ h3 {
     padding: 20px;
     border-radius: 15px;
     margin: 0;
-    border: 2px solid rgba(0, 0, 0, 0.553);
+    border: 1px solid black;
     box-shadow: 0 0 10px rgba(86, 86, 86, 0.308);
 }
 
@@ -512,7 +512,7 @@ h3 {
     text-align: left;
     width: 75%;
     /* outline: 2px solid black; */
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 40px;
     background-color: #ffffff;
     border-top-left-radius: 100px;
@@ -567,14 +567,15 @@ h3 {
 }
 
 .info-title {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 500;
     margin-bottom: 5px;
 }
 
 .info-contact {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     margin-bottom: 30px;
+    font-weight: 50;
 }
 
 form {
@@ -582,7 +583,7 @@ form {
     flex-direction: column;
     padding: 25px;
     width: 450px;
-    background-color: #eceef5;
+    background-color: #ffffff;
     box-shadow: var(--shadow);
     border-radius: 4px;
 }
@@ -635,6 +636,8 @@ textarea {
 
 input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     outline: none;
+    border: none;
+    box-shadow: none; 
 } 
 
 .form-btn {
@@ -657,4 +660,84 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     margin-top: 20px;
 }
 
-/*  */
+/*#Footer Section*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    padding-top: 25px;
+    padding-bottom: 0;
+    background-color: rgb(20, 20, 20);
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.conclusion {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.conclusion h1{
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.socail-medias {
+    display: flex;
+    justify-content: space-between;
+    width: 38%;
+    margin-top: 10px;
+}
+
+.footer-links-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links-container h1{
+
+}
+
+.foot-link-div ul{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    list-style-type: none;
+}
+
+.foot-nav {
+    padding-bottom: 10px;
+}
+
+.foot-li {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-extra {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-information {
+    display: flex;
+    padding-top: 10px;
+    align-items: center;
+}
+
+.contact-information p{
+    padding-left: 10px;
+}
+
+.footer-copyright {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
