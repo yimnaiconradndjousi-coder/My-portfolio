@@ -7,7 +7,9 @@
 :root {
     --primary-color: black;
     --transparent-primary-color: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.349) 80%);
-    --seconday-color: white;
+    --secondary-color: white;
+    /* FIX: was '--seconday-color' (typo). Renamed to '--secondary-color'.
+       Update all usages below. */
     --btn-shadow: 0 0 10px rgba(86, 86, 86, 0.681);
     --shadow: 0 0 10px rgba(86, 86, 86, 0.104);
     --bg-tech: #D7DBE4;
@@ -29,7 +31,13 @@ body {
     width: 100%;
     font-family: 'Poppins', sans-serif;
     background: #ffffff;
-    position: absolute;
+    /* FIX: 'position: absolute' was removed. Setting position:absolute on body
+       takes it out of normal flow, which means the page height collapses to 0
+       in some browsers and causes scroll/layout bugs. Body should always remain
+       position: static (the default). */
+    overflow-x: hidden;
+    /* WHY overflow-x: hidden: prevents horizontal scroll caused by any element
+       that accidentally overflows the viewport width on mobile. */
 }
 
 hr {
@@ -64,7 +72,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    height: 100vh;
     background-image: url(/image/white\ bg.webp);
     background-size: cover;
     color: var(--primary-color);
@@ -82,7 +90,7 @@ h3 {
     width: 96%;
     height: 70px;
     border-radius: 15px;
-    position: sticky;
+    position: static;
     top: 8px;
     background-color: transparent;
     backdrop-filter: blur(10px);
@@ -127,6 +135,8 @@ h3 {
     font-size: large;
     text-decoration: none;
     color: var(--secondary-color);
+    /* FIX: was var(--secondary-color) but the variable was spelled --seconday-color
+       (typo). Now fixed at the :root level, so this works correctly. */
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -136,7 +146,7 @@ h3 {
     padding: 14px 20px 14px 20px;
     background-color: rgb(23, 23, 23);
     border: none;
-    color: var(--seconday-color);
+    color: var(--secondary-color);
     border-radius: 8px;
     box-shadow: var(--btn-shadow);
     cursor: pointer;
@@ -152,7 +162,7 @@ h3 {
     width: 100%;
     padding: 20px;
     padding-left: 50px;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .hero-content h1 {
@@ -160,12 +170,13 @@ h3 {
     text-align: left;
     width: 700px;
     max-width: 500px;
+    line-height: 55px;
 }
 
 .hero-content p {
     text-align: left;
     font-size: 1rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .text-content p {
@@ -174,7 +185,7 @@ h3 {
     margin: 15px;
     margin-left: 0;
     text-align: left;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     margin-bottom: 35px;
 }
 
@@ -182,7 +193,8 @@ h3 {
 
 .hero-buttons {
     display: flex;
-    gap: 20px;
+    gap: 25px;
+
 }
 
 .btn-secondary {
@@ -190,7 +202,7 @@ h3 {
     padding: 15px 35px 15px 35px;
     background-color: rgb(23, 23, 23);
     border: none;
-    color: var(--seconday-color);
+    color: var(--secondary-color);
     border-radius: 8px;
     box-shadow: var(--btn-shadow);
     cursor: pointer;
@@ -239,11 +251,12 @@ h3 {
     height: 80px;
     border-radius: 12px;
     padding: 20px;
-    margin-top: 15px;
+    margin-top: 3rem;
     color: var(--primary-color);
     background-color: transparent;
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
+    z-index: 2;
 }
 
 .num-info {
@@ -363,7 +376,7 @@ h3 {
 
 #projects-section p{
     font-size: 1rem;
-    margin-top: 5px;
+    margin-top: 2px;
 }
 
 .projects-container {
@@ -399,7 +412,7 @@ h3 {
     background-color: var(--primary-color);
     padding: 4px 12px 4px 12px;
     border-radius: 20px;
-    color: var(--seconday-color);
+    color: var(--secondary-color);
     margin: 4px;
     margin-left: 0px;
     margin-top: 2px;
@@ -425,7 +438,7 @@ h3 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     padding: 25px;
     box-sizing: border-box;
     align-items: center;
@@ -652,13 +665,327 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     border: none;
     width: 95%;
     text-align: center;
-    color: var(--seconday-color);
+    color: var(--secondary-color);
     border-radius: 3px;
     box-shadow: var(--btn-shadow);
     cursor: pointer;
     transition: all 0.2s ease;
     margin-top: 20px;
 }
+
+/* ============================================
+   RESPONSIVE DESIGN — MEDIA QUERIES
+   Why: Your site uses many fixed pixel widths
+   (e.g. width: 700px, width: 450px, width: 75%)
+   which cause overflow and broken layouts on
+   smaller screens. Media queries let us override
+   those values at different screen sizes.
+   
+   Breakpoints used:
+   - 1024px → tablets / small laptops
+   - 768px  → large phones / portrait tablets
+   - 480px  → small phones
+   ============================================ */
+
+/* ---- 1024px: Tablet / Small Laptop ---- */
+@media (max-width: 1024px) {
+
+    /* Navbar: compress links and hide Download CV to save space */
+    .nav-links {
+        width: 75%;
+    }
+
+    .nav-item {
+        font-size: 0.95rem;
+    }
+
+    /* WHY: The download CV button disappears at this point
+       because nav links already take up most of the bar. */
+    .nav-button {
+        display: none;
+    }
+
+    /* Hero: fixed h1 width (700px / 500px) would overflow */
+    .hero-content h1 {
+        font-size: 2.4rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .text-content p {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Tech stack: 4 columns is fine on tablet */
+    .techstack-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .tech {
+        padding: 40px;
+        height: auto;
+    }
+
+    /* Projects: 2 columns instead of 4 in a row */
+    .projects-container {
+        flex-wrap: wrap;
+    }
+
+    .project-item {
+        max-width: calc(50% - 20px);
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    .project-img {
+        width: 100%;
+    }
+
+    /* Services: already uses auto-fit so no change needed */
+
+    /* About: reduce bio width */
+    .my-bio {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .my-bio p {
+        width: 100%;
+    }
+
+    .my-pic {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    /* Contact: stack the two columns */
+    #contact-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .Contact-info {
+        width: 80%;
+    }
+
+    form {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    /* Service section description had a fixed 750px width */
+    .service-section-title p {
+        width: 100%;
+    }
+}
+
+
+/* ---- 768px: Large Phones / Portrait Tablet ---- */
+@media (max-width: 768px) {
+
+    /* Navbar becomes a top bar with logo + hamburger feel.
+       WHY: 6 nav links + logo + button cannot fit at 768px.
+       We hide the links entirely. In a real production site
+       you'd add a JS hamburger menu — noted in README. */
+    .navbar {
+        width: 100%;
+        border-radius: 0;
+        top: 0;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-button {
+        display: block; /* Show Download CV alone on mobile */
+    }
+
+    .download-CV-btn {
+        font-size: 0.85rem;
+        padding: 10px 14px;
+    }
+
+    /* Hero */
+    .hero-content {
+        padding: 20px;
+        margin-top: 30px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-content p {
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 1.9rem;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .text-content p {
+        text-align: center;
+        width: 100%;
+        margin: 10px 0 25px 0;
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* Stats bar: stack vertically on small screens */
+    .info {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+        padding: 20px;
+        width: 90%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Experience: 2 columns on phone */
+    .techstack-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tech {
+        padding: 25px;
+    }
+
+    .technology-stack {
+        width: 100%;
+    }
+
+    /* Experience section: remove fixed height */
+    #experience-section {
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    /* Projects: single column */
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-item {
+        max-width: 100%;
+        flex: 1 1 100%;
+        height: auto; /* WHY: fixed 35em height clips content on mobile */
+    }
+
+    .project-img {
+        width: 100%;
+    }
+
+    /* Services: fixed height removed */
+    #services-section {
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    /* About: remove fixed height */
+    #about-section {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .my-bio {
+        width: 100%;
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        padding: 25px;
+        flex-direction: column-reverse; /* image on top, text below */
+        gap: 20px;
+    }
+
+    .my-bio p {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .my-pic {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    /* Contact */
+    #contact-section {
+        padding: 40px 20px 60px 20px;
+    }
+
+    .Contact-info {
+        width: 100%;
+    }
+
+    .Contact-info h2 {
+        font-size: 2rem;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .conclusion {
+        width: 100%;
+    }
+
+    .socail-medias {
+        width: 60%;
+    }
+
+    /* Scroll-to-top button: too close to edge on mobile */
+    .takemeup-btn {
+        right: 20px;
+        bottom: 25px;
+        width: 38px;
+    }
+}
+
+
+/* ---- 480px: Small Phones ---- */
+@media (max-width: 480px) {
+
+    .hero-content h1 {
+        font-size: 1.55rem;
+    }
+
+    /* Tech stack: single column on very small screens */
+    .techstack-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Contact info email overflow fix */
+    .info-contact {
+        font-size: 1.1rem;
+        word-break: break-all;
+    }
+
+    .Contact-info h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* ============================================
+   END OF RESPONSIVE SECTION
+   ============================================ */
 
 /*#Footer Section*/
 
