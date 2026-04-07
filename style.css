@@ -123,6 +123,13 @@ h3 {
     transform: scale(1);
 }
 
+.contact-btn {
+    font-size: large;
+    text-decoration: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
 .download-CV-btn {
     font-size: 1rem;
