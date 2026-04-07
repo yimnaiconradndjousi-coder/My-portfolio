@@ -338,8 +338,9 @@ h3 {
     padding: 20px;
     padding-left: 10px;
     box-sizing: border-box;
-    /* background-color: #e1e4ea; */
-    background-image: url(/image/white\ bg.jpg);
+    background-color: #e3e8ef;
+    /* background-image: url(/image/white\ bg2.jpg);
+    background-size: cover;  */
 }
 
 .project-section-title {
@@ -374,9 +375,9 @@ h3 {
     display: flex;
     max-width: 360px;
     flex-direction: column;
-    background-color: #ffffff;
-    /* background-color: rgba(255, 255, 255, 0.716); */
-    /* border: 0.5px solid black; */
+    /* background-color: transparent; */
+    background-color: rgba(255, 255, 255, 0.423);
+    border: 0.5px solid black;
     backdrop-filter: blur(12px);
     margin: 10px;
     height: 35em;
@@ -464,10 +465,11 @@ h3 {
     border-radius: 15px;
     margin: 0;
     border: 2px solid rgba(0, 0, 0, 0.553);
+    box-shadow: 0 0 10px rgba(86, 86, 86, 0.308);
 }
 
 .service-card h3 {
-    margin: 15px;
+    margin: 0px;
     margin-left: 0;
     font-size: 1.4rem;
 }
@@ -478,3 +480,49 @@ h3 {
     font-size: 1rem;
 }
 
+.service-icon {
+    width: 50px;
+    background-color: #2f2f2f;
+    padding: 4px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/* #About Section */
+
+#about-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#about-section h2{
+    padding: 20px;
+    margin: 40px;
+    margin-bottom: 10px;
+}
+
+.my-bio {
+    display: flex;
+    text-align: left;
+    width: 75%;
+    /* outline: 2px solid black; */
+    border: 2px solid black;
+    padding: 90px;
+}
+
+.my-bio p{
+    font-size: 1.2rem;
+    width: 40%;
+    line-height: 23px;
+}
+
+.my-pic {
+    width: 450px;
+    margin: 15px;
+    margin-top: 0;
+    border-radius: 10px;
+}
