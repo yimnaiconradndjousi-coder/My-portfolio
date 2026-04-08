@@ -967,6 +967,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
         margin-bottom: 50px;
     } */
 
+    #experience-section {
+        background-position-y: 0;
+    }
+
     .hero-content h1 {
         font-size: 1.55rem;
     }
