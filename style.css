@@ -72,7 +72,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
     background-image: url(/image/white\ bg.webp);
     background-size: cover;
     color: var(--primary-color);
@@ -962,6 +962,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* ---- 480px: Small Phones ---- */
 @media (max-width: 480px) {
+
+    /* .info {
+        margin-bottom: 50px;
+    } */
 
     .hero-content h1 {
         font-size: 1.55rem;
